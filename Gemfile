@@ -37,12 +37,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'haml'
 gem 'haml-rails'
-gem 'rails_admin'
+gem 'activeadmin'
 gem 'devise'
 gem 'cancan'
 gem 'draper'
 gem 'pundit'
-gem "paperclip", "~> 6.0.0"
+gem 'paperclip', '~> 6.0.0'
 gem 'rack-cors', :require => 'rack/cors'
 
 # Use Capistrano for deployment
