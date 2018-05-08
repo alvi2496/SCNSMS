@@ -42,7 +42,7 @@ gem 'devise'
 gem 'cancan'
 gem 'draper'
 gem 'pundit'
-gem 'paperclip', '~> 5.0.0'
+gem 'paperclip'
 gem 'rack-cors', :require => 'rack/cors'
 
 # Use Capistrano for deployment
