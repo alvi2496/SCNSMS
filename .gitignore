@@ -36,3 +36,6 @@
 # Ignore resource folder of paperclip
 /public/system
 /public/static_pages
+
+# Ignore the folder of requirement documents
+/docs
