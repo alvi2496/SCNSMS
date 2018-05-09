@@ -15,7 +15,7 @@ gem 'puma', '~> 3.7'
 # include font-awesome
 gem 'font-awesome-rails'
 # include bootstrap
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.1.1'
 # include jquery
 gem 'jquery-rails'
 # Use SCSS for stylesheets
