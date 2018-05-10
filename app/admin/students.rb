@@ -5,12 +5,13 @@ ActiveAdmin.register Student do
                 :program_completion_date, :payment_method, :name, :full_name, :sex, :father_name, :mother_name,
                 :date_of_birth, :national_id_number, :passport_number, :guardian_name, :relation_with_guardian,
                 :nationality, :religion, :marital_status, :email_address, :mobile_number, :avatar, :blood_group,
-                addresses_attributes: [:village_house_road, :post_office, :postal_code, :union, :district,
-                                       :division, :type],
-                educational_qualifications_attributes: [:level_of_education, :institution, :roll, :result,
-                                                        :year, :duration, :country_name],
-                leaves_attributes: [:start_date, :end_date, :reason, :duration],
-                show_causes_attributes: [:date, :reason]
+                addresses_attributes: [:id, :village_house_road, :post_office, :postal_code, :union, :district,
+                                       :division, :address_type, :_destroy],
+                educational_qualifications_attributes: [:id, :level_of_education, :institution, :roll, :result,
+                                                        :year, :duration, :country_name, :_destroy],
+                leaves_attributes: [:id,:start_date, :end_date, :reason, :duration, :_destroy],
+                show_causes_attributes: [:id, :date, :reason, :_destroy],
+                results_attributes: [:id, :full_mark, :achieved_mark, :referred_subjects, :remark, :_destroy]
 
   form do |f|
     f.inputs do
@@ -46,7 +47,7 @@ ActiveAdmin.register Student do
     end
     f.has_many :addresses do  |address|
       address.inputs do
-        address.input :type
+        address.input :address_type
         address.input :village_house_road, label: 'Village/ House/ Road'
         address.input :post_office
         address.input :postal_code
@@ -78,6 +79,14 @@ ActiveAdmin.register Student do
       show_cause.inputs do
         show_cause.input :date
         show_cause.input :reason
+      end
+    end
+    f.has_many :results do |result|
+      result.inputs do
+        result.input :full_mark
+        result.input :achieved_mark
+        result.input :referred_subjects
+        result.input :remark
       end
     end
     f.actions

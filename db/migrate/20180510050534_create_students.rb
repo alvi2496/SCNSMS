@@ -17,7 +17,7 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.integer :sex
       t.string :father_name
       t.string :mother_name
-      t.string :date_of_birth
+      t.date :date_of_birth
       t.integer :blood_group
       t.string :national_id_number
       t.string :passport_number

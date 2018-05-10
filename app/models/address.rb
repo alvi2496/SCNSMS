@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
   belongs_to :student
 
-  enum type: %i[present permanent]
+  enum address_type: %i[present permanent]
 end

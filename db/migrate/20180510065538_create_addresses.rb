@@ -8,7 +8,7 @@ class CreateAddresses < ActiveRecord::Migration[5.1]
       t.string :union
       t.string :district
       t.string :division
-      t.integer :type
+      t.integer :address_type
       t.timestamps
     end
   end
