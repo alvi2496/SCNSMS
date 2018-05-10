@@ -1,13 +1,13 @@
 class Student < ApplicationRecord
-  has_many :addresses
+  has_many :addresses, dependent: :destroy
   accepts_nested_attributes_for :addresses
-  has_many :educational_qualifications
+  has_many :educational_qualifications, dependent: :destroy
   accepts_nested_attributes_for :educational_qualifications
-  has_many :leaves
+  has_many :leaves, dependent: :destroy
   accepts_nested_attributes_for :leaves
-  has_many :show_causes
+  has_many :show_causes, dependent: :destroy
   accepts_nested_attributes_for :show_causes
-  has_many :results
+  has_many :results, dependent: :destroy
   accepts_nested_attributes_for :results
 
   enum payment_method: %i[cash loan]
