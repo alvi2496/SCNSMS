@@ -13,6 +13,19 @@ ActiveAdmin.register Student do
                 show_causes_attributes: [:id, :date, :reason, :_destroy],
                 results_attributes: [:id, :full_mark, :achieved_mark, :referred_subjects, :remark, :_destroy]
 
+  index do
+    selectable_column
+    column :bnc_student_id
+    column :du_student_id
+    column :full_name
+    column :session
+    actions
+  end
+
+  show do
+    render partial: 'show', locals: { student: student }
+  end
+
   form do |f|
     f.inputs do
       f.input :bnc_student_id, label: 'BNC Student ID'

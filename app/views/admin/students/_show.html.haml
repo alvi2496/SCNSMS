@@ -1,0 +1,73 @@
+.container
+  .row
+    .col-md-12
+      .row
+        .col-md-12
+          %div{ style: 'text-align: center;' }
+            %table.table.table-borderless
+              %tbody
+                %tr
+                  %td{ style: 'width: 70%;' }
+                    = image_tag 'scn-logo.jpg'
+                  %td{ style: 'width: 30%;' }
+                    = image_tag student.avatar.url, style: 'height: 200px; width: 170px;'
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Student Registration Information
+
+          %h2{ style: 'font-size: 35px; text-align: center; padding-top: 40px;'}
+            = "Student ID# #{student.id}"
+
+          %div{ style: 'text-align: center;' }
+            %table.table.table-striped.table-hover
+              %tbody
+                %tr
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    BNC Student ID
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.bnc_student_id
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    DU Student ID
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.du_student_id
+                %tr
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Program/ Course Type
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.program
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Institution name
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.institution_name
+                %tr
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Session
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.session
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Date of Program/ Course Admission
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.date_of_program_admission
+                %tr
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Length of Program/Course
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.length_of_program
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Student Program Completion Length
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.program_completion_length
+                %tr
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Program/ Course Starting Date
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.program_start_date
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Program/ Course Completion Date
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.program_completion_date
+                %tr
+                  %th{ style: 'text-align: left; padding: 10px;' }
+                    Payment method
+                  %td{ style: 'text-align: left; padding: 10px;' }
+                    = student.payment_method
