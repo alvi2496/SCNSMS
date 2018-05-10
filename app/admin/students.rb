@@ -15,12 +15,23 @@ ActiveAdmin.register Student do
 
   index do
     selectable_column
-    column :bnc_student_id
-    column :du_student_id
+    column 'BNC Student ID', :bnc_student_id
+    column 'DU Student ID', :du_student_id
     column :full_name
     column :session
     actions
   end
+
+  filter :full_name
+  filter :bnc_student_id, label: 'BNC Student ID'
+  filter :du_student_id, label: 'DU Student ID'
+  preserve_default_filters!
+  remove_filter :addresses, :educational_qualifications, :leaves, :show_causes, :results, :program,
+                :institution_name, :length_of_program, :program_completion_date, :date_of_program_admission,
+                :name, :sex, :father_name, :mother_name, :quota, :nationality, :religion, :marital_status,
+                :created_at, :updated_at, :avatar, :relation_with_guardian, :avatar_file_name, :avatar_content_type,
+                :avatar_file_size, :avatar_updated_at
+
 
   show do
     render partial: 'show', locals: { student: student }
