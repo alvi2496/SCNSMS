@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180510065538) do
+ActiveRecord::Schema.define(version: 20180510085733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,20 @@ ActiveRecord::Schema.define(version: 20180510065538) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "educational_qualifications", force: :cascade do |t|
+    t.bigint "student_id"
+    t.string "level_of_education"
+    t.string "institution"
+    t.string "roll"
+    t.string "result"
+    t.string "year"
+    t.string "duration"
+    t.string "country_name", default: "Bangladesh"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_educational_qualifications_on_student_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "bnc_student_id"
     t.string "du_student_id"
@@ -67,6 +81,7 @@ ActiveRecord::Schema.define(version: 20180510065538) do
     t.string "institution_name"
     t.string "session"
     t.string "length_of_program"
+    t.string "program_completion_length"
     t.date "date_of_program_admission"
     t.date "program_start_date"
     t.date "program_completion_date"
@@ -77,6 +92,7 @@ ActiveRecord::Schema.define(version: 20180510065538) do
     t.string "father_name"
     t.string "mother_name"
     t.string "date_of_birth"
+    t.integer "blood_group"
     t.string "national_id_number"
     t.string "passport_number"
     t.string "guardian_name"

@@ -7,6 +7,7 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.string :institution_name
       t.string :session
       t.string :length_of_program
+      t.string :program_completion_length
       t.date :date_of_program_admission
       t.date :program_start_date
       t.date :program_completion_date
@@ -17,6 +18,7 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.string :father_name
       t.string :mother_name
       t.string :date_of_birth
+      t.integer :blood_group
       t.string :national_id_number
       t.string :passport_number
       t.string :guardian_name
