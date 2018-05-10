@@ -11,6 +11,22 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.date :program_start_date
       t.date :program_completion_date
       t.integer :payment_method
+      t.string :name
+      t.string :full_name
+      t.integer :sex
+      t.string :father_name
+      t.string :mother_name
+      t.string :date_of_birth
+      t.string :national_id_number
+      t.string :passport_number
+      t.string :guardian_name
+      t.string :relation_with_guardian
+      t.integer :quota
+      t.string :nationality
+      t.integer :religion
+      t.integer :marital_status
+      t.string :email_address
+      t.string :mobile_number
       t.timestamps
     end
   end
