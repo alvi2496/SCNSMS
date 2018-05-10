@@ -5,10 +5,11 @@ ActiveAdmin.register Student do
                 :program_completion_date, :payment_method, :name, :full_name, :sex, :father_name, :mother_name,
                 :date_of_birth, :national_id_number, :passport_number, :guardian_name, :relation_with_guardian,
                 :nationality, :religion, :marital_status, :email_address, :mobile_number, :avatar, :blood_group,
-                address_attributes: [:village_house_road, :post_office, :postal_code, :union, :district,
+                addresses_attributes: [:village_house_road, :post_office, :postal_code, :union, :district,
                                      :division, :type],
                 educational_qualifications_attributes: [:level_of_education, :institution, :roll, :result,
-                                                        :year, :duration, :country_name]
+                                                        :year, :duration, :country_name],
+                leaves_attributes: [:start_date, :end_date, :reason, :duration]
 
   form do |f|
     f.inputs do
@@ -62,6 +63,14 @@ ActiveAdmin.register Student do
         educational_qualification.input :year
         educational_qualification.input :duration
         educational_qualification.input :country_name, label: 'Country', value: 'Bangladesh'
+      end
+    end
+    f.has_many :leaves do |leave|
+      leave.inputs do
+        leave.input :start_date
+        leave.input :end_date
+        leave.input :reason
+        leave.input :duration
       end
     end
     f.actions

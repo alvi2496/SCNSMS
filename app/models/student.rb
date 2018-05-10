@@ -3,6 +3,8 @@ class Student < ApplicationRecord
   accepts_nested_attributes_for :addresses
   has_many :educational_qualifications
   accepts_nested_attributes_for :educational_qualifications
+  has_many :leaves
+  accepts_nested_attributes_for :leaves
 
   enum payment_method: %i[cash loan]
   enum sex: %i[male female]
