@@ -22,52 +22,138 @@
             %table.table.table-striped.table-hover
               %tbody
                 %tr
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     BNC Student ID
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.bnc_student_id
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     DU Student ID
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.du_student_id
                 %tr
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Program/ Course Type
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.program
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Institution name
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.institution_name
                 %tr
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Session
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.session
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Date of Program/ Course Admission
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.date_of_program_admission
                 %tr
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Length of Program/Course
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.length_of_program
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Student Program Completion Length
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.program_completion_length
                 %tr
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Program/ Course Starting Date
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.program_start_date
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Program/ Course Completion Date
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.program_completion_date
                 %tr
-                  %th{ style: 'text-align: left; padding: 10px;' }
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Payment method
-                  %td{ style: 'text-align: left; padding: 10px;' }
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.payment_method
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Personal Information
+
+          %div{ style: 'text-align: center;' }
+            %table.table.table-striped.table-hover
+              %tbody
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Name ( Bangla)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.name
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Full Name (English)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.full_name
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Father's Name (English)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.father_name
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Mother's Name (English)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.mother_name
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Date of Birth
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.date_of_birth
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Religion
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.religion
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Sex
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.sex
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Blood Group
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.blood_group
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    National ID No
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.national_id_number
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Passport No
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.passport_number
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Guardian Name
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.guardian_name
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Relation to Guardian
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.relation_with_guardian
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Quota ( Poor and Merit/ Poor/ Merit)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.quota
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Nationality
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.nationality
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Marital Status
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.marital_status
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    E-mail Address
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.email_address
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Mobile Number
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.mobile_number
+
+                              
