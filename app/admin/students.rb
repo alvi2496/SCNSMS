@@ -6,10 +6,11 @@ ActiveAdmin.register Student do
                 :date_of_birth, :national_id_number, :passport_number, :guardian_name, :relation_with_guardian,
                 :nationality, :religion, :marital_status, :email_address, :mobile_number, :avatar, :blood_group,
                 addresses_attributes: [:village_house_road, :post_office, :postal_code, :union, :district,
-                                     :division, :type],
+                                       :division, :type],
                 educational_qualifications_attributes: [:level_of_education, :institution, :roll, :result,
                                                         :year, :duration, :country_name],
-                leaves_attributes: [:start_date, :end_date, :reason, :duration]
+                leaves_attributes: [:start_date, :end_date, :reason, :duration],
+                show_causes_attributes: [:date, :reason]
 
   form do |f|
     f.inputs do
@@ -71,6 +72,12 @@ ActiveAdmin.register Student do
         leave.input :end_date
         leave.input :reason
         leave.input :duration
+      end
+    end
+    f.has_many :show_causes do |show_cause|
+      show_cause.inputs do
+        show_cause.input :date
+        show_cause.input :reason
       end
     end
     f.actions
