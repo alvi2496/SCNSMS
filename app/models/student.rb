@@ -1,4 +1,6 @@
 class Student < ApplicationRecord
+  has_many :addresses
+  accepts_nested_attributes_for :addresses
 
   enum payment_method: %i[cash loan]
   enum sex: %i[male female]

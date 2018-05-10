@@ -4,7 +4,9 @@ ActiveAdmin.register Student do
                 :length_of_program, :date_of_program_admission, :program_start_date, :program_completion_date,
                 :payment_method, :name, :full_name, :sex, :father_name, :mother_name, :date_of_birth,
                 :national_id_number, :passport_number, :guardian_name, :relation_with_guardian, :quota,
-                :nationality, :religion, :marital_status, :email_address, :mobile_number, :avatar
+                :nationality, :religion, :marital_status, :email_address, :mobile_number, :avatar,
+                address_attributes: [:village_house_road, :post_office, :postal_code, :union, :district,
+                                     :division, :type]
 
   form do |f|
     f.inputs do
@@ -28,7 +30,7 @@ ActiveAdmin.register Student do
       f.input :passport_number, label: 'Passport No'
       f.input :guardian_name
       f.input :relation_with_guardian
-      f.input :quota, label: 'Quota ( Grand Daughter/ Son or Great GrandDaughter/ Son of Freedom Fighter)'
+      f.input :quota, label: 'Quota(Grand Daughter/ Son or Great GrandDaughter/ Son of Freedom Fighter)'
       f.input :nationality
       f.input :religion
       f.input :marital_status
@@ -36,9 +38,16 @@ ActiveAdmin.register Student do
       f.input :mobile_number
       f.input :avatar, as: :file, label: 'Image'
     end
-    # f.has_many :personal_information do |p|
-    #   p.input :name
-    # end
+    f.has_many :addresses do  |address|
+      address.inputs do
+        address.input :type
+        address.input :village_house_road
+        address.input :post_office
+        address.input :postal_code
+        address.input :union
+        address.input :district
+      end
+    end
     f.actions
   end
 
