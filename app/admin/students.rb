@@ -22,16 +22,16 @@ ActiveAdmin.register Student do
       f.input :session
       f.input :length_of_program, label: 'Length of Program/Course'
       f.input :program_completion_length, label: 'Student Program Completion Length'
-      f.input :date_of_program_admission, label: 'Date of Program/ Course Admission'
-      f.input :program_start_date, label: 'Program/ Course Starting Date'
-      f.input :program_completion_date, label: 'Program/ Course Completion Date'
+      f.input :date_of_program_admission, label: 'Date of Program/ Course Admission', start_year: 2000, end_year: 2050
+      f.input :program_start_date, label: 'Program/ Course Starting Date', start_year: 2000, end_year: 2050
+      f.input :program_completion_date, label: 'Program/ Course Completion Date', start_year: 2000, end_year: 2050
       f.input :payment_method
       f.input :name, label: 'Name (Bangla)'
       f.input :full_name, label: 'Full Name (English)'
       f.input :sex
       f.input :father_name, label: 'Father\'s Name(English)'
       f.input :mother_name, label: 'Mother\'s Name (English)'
-      f.input :date_of_birth
+      f.input :date_of_birth, start_year: 1970
       f.input :blood_group
       f.input :national_id_number, label: 'National ID No.'
       f.input :passport_number, label: 'Passport No'
@@ -69,15 +69,15 @@ ActiveAdmin.register Student do
     end
     f.has_many :leaves do |leave|
       leave.inputs do
-        leave.input :start_date
-        leave.input :end_date
+        leave.input :start_date, start_year: 2000, end_year: 2050
+        leave.input :end_date, start_year: 2000, end_year: 2050
         leave.input :reason
         leave.input :duration
       end
     end
     f.has_many :show_causes do |show_cause|
       show_cause.inputs do
-        show_cause.input :date
+        show_cause.input :date, start_year: 2000, end_year: 2050
         show_cause.input :reason
       end
     end
