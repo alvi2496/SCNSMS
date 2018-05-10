@@ -38,7 +38,7 @@ ActiveAdmin.register Student do
       f.input :guardian_name
       f.input :relation_with_guardian
       f.input :quota, label: 'Quota(Grand Daughter/ Son or Great GrandDaughter/ Son of Freedom Fighter)'
-      f.input :nationality
+      f.input :nationality, value: 'Bangladesh'
       f.input :religion
       f.input :marital_status
       f.input :email_address, label: 'E-mail Address'
@@ -59,7 +59,7 @@ ActiveAdmin.register Student do
     f.has_many :educational_qualifications do |educational_qualification|
       educational_qualification.inputs do
         educational_qualification.input :level_of_education
-        educational_qualification.input :institution
+        educational_qualification.input :institution, label: 'College/ University/ Institution/ Board'
         educational_qualification.input :roll
         educational_qualification.input :result, label: 'Class/ CGPA'
         educational_qualification.input :year
