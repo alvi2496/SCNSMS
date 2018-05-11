@@ -17,6 +17,6 @@ class Student < ApplicationRecord
   enum marital_status: %i[single married]
   enum blood_group: %i[O−	O+	A−	A+	B−	B+	AB−	AB+]
 
-  has_attached_file :avatar, styles: { medium: '300x300>' }, default_url: '/images/:style/missing.png'
+  has_attached_file :avatar, default_url: '/assets/user-missing.png'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 end
