@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  active_admin:
+      powered_by: "Designed and Developed By <a href=\"http://alvi2496.github.io\" target=\"_blank\">Alvi Mahadi</a>"

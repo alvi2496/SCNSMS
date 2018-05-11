@@ -1,5 +1,7 @@
 ActiveAdmin.register Student do
 
+  menu priority: 1
+
   permit_params :bnc_student_id, :du_student_id, :program, :institution_name, :session, :length_of_program,
                 :program_completion_length, :date_of_program_admission, :program_start_date, :quota,
                 :program_completion_date, :payment_method, :name, :full_name, :sex, :father_name, :mother_name,
