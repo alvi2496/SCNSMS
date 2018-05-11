@@ -1,0 +1,375 @@
+-#- student = @student
+.container
+  .row
+    .col-md-12
+      .row
+        .col-md-12
+          %div{ style: 'text-align: center;' }
+            %table.table.table-borderless
+              %tbody
+                %tr
+                  %td{ style: 'text-align: left; width: 70%;' }
+                    = image_tag 'scn-logo.jpg'
+                  %td{ style: 'text-align: right; width: 30%;' }
+                    = image_tag @student.avatar.url, style: 'height: 200px; width: 170px;'
+
+          %h1{ style: 'font-size: 30px; text-align: center; padding-top: 40px;' }
+            Student Registration Information
+
+          %h2{ style: 'font-size: 35px; text-align: center; padding-top: 40px;'}
+            = "Student ID# #{@student.id}"
+          %br
+          %br
+
+          %div{ style: 'text-align: center;' }
+            %table.table.table-striped.table-hover
+              %tbody
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    BNC Student ID
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.bnc_student_id
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    DU Student ID
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.du_student_id
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Program/ Course Type
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.program
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Institution name
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.institution_name
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Session
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.session
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Date of Program/ Course Admission
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.date_of_program_admission
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Length of Program/Course
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.length_of_program
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Student Program Completion Length
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.program_completion_length
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Program/ Course Starting Date
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.program_start_date
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Program/ Course Completion Date
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.program_completion_date
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Payment method
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.payment_method
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Personal Information
+
+          %div{ style: 'text-align: center;' }
+            %table.table.table-striped.table-hover
+              %tbody
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Name ( Bangla)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.name
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Full Name (English)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.full_name
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Father's Name (English)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.father_name
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Mother's Name (English)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.mother_name
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Date of Birth
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.date_of_birth
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Religion
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.religion
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Sex
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.sex
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Blood Group
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.blood_group
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    National ID No
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.national_id_number
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Passport No
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.passport_number
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Guardian Name
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.guardian_name
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Relation to Guardian
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.relation_with_guardian
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Quota ( Poor and Merit/ Poor/ Merit)
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.quota
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Nationality
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.nationality
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Marital Status
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.marital_status
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    E-mail Address
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.email_address
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Mobile Number
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = @student.mobile_number
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Present Address
+
+          - if @student.addresses.present.present?
+            - @student.addresses.present.each do |present|
+              %div{ style: 'text-align: center;' }
+                %table.table.table-striped.table-hover
+                  %tbody
+                    %tr
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Village/ House/ Road
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = present.village_house_road
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Thana / Upazila
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = present.union
+                    %tr
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Post Office
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = present.post_office
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Postal Code
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = present.postal_code
+                    %tr
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        District
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = present.district
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Division
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = present.division
+          - else
+            %p{ style: 'text-align: center; color:red; font-size: 20px' }
+              No Present Address found
+
+
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Permanent Address
+
+          - if @student.addresses.permanent.present?
+            - @student.addresses.permanent.each do |permanent|
+              %div{ style: 'text-align: center;' }
+                %table.table.table-striped.table-hover
+                  %tbody
+                    %tr
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Village/ House/ Road
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = permanent.village_house_road
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Thana / Upazila
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = permanent.union
+                    %tr
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Post Office
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = permanent.post_office
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Postal Code
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = permanent.postal_code
+                    %tr
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        District
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = permanent.district
+                      %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                        Division
+                      %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                        = permanent.division
+          - else
+            %p{ style: 'text-align: center; color:red; font-size: 20px' }
+              No Permanent Address found
+
+
+
+
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Educational Qualification
+
+          - if @student.educational_qualifications.present?
+            %div{ style: 'text-align: center;' }
+              %table.table.table-striped.table-hover
+                %thead
+                  %tr
+                    %th{ style: 'padding: 10px;' }
+                      Level of Education
+                    %th{ style: 'padding: 10px;' }
+                      College/ University/ Institution/ Board
+                    %th{ style: 'padding: 10px;' }
+                      Roll #
+                    %th{ style: 'padding: 10px;' }
+                      Class/ CGPA
+                    %th{ style: 'padding: 10px;' }
+                      Year
+                    %th{ style: 'padding: 10px;' }
+                      Duration
+                    %th{ style: 'padding: 10px;' }
+                      Country
+                %tbody
+                  - @student.educational_qualifications.each do |eq|
+                    %tr
+                      %td{ style: 'padding: 10px;' }
+                        = eq.level_of_education
+                      %td{ style: 'padding: 10px;' }
+                        = eq.institution
+                      %td{ style: 'padding: 10px;' }
+                        = eq.roll
+                      %td{ style: 'padding: 10px;' }
+                        = eq.result
+                      %td{ style: 'padding: 10px;' }
+                        = eq.year
+                      %td{ style: 'padding: 10px;' }
+                        = eq.duration
+                      %td{ style: 'padding: 10px;' }
+                        = eq.country_name
+          - else
+            %p{ style: 'text-align: center; color:red; font-size: 20px' }
+              No Educational Qualifications found
+
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Leaves
+
+          - if @student.leaves.present?
+            %div{ style: 'text-align: center;' }
+              %table.table.table-striped.table-hover
+                %thead
+                  %tr
+                    %th{ style: 'padding: 10px;' }
+                      Start Date
+                    %th{ style: 'padding: 10px;' }
+                      End Date
+                    %th{ style: 'padding: 10px;' }
+                      Reason
+                    %th{ style: 'padding: 10px;' }
+                      Duration
+                %tbody
+                  - @student.leaves.each do |leave|
+                    %tr
+                      %td{ style: 'padding: 10px;' }
+                        = leave.start_date
+                      %td{ style: 'padding: 10px;' }
+                        = leave.end_date
+                      %td{ style: 'padding: 10px;' }
+                        = leave.reason
+                      %td{ style: 'padding: 10px;' }
+                        = leave.duration
+          - else
+            %p{ style: 'text-align: center; color:red; font-size: 20px' }
+              No Leaves found
+
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Show Causes
+
+          - if @student.show_causes.present?
+            %div{ style: 'text-align: center;' }
+              %table.table.table-striped.table-hover
+                %thead
+                  %tr
+                    %th{ style: 'width: 30%; padding: 10px;' }
+                      Date
+                    %th{ style: 'width: 70%; padding: 10px;' }
+                      Reason
+                %tbody
+                  - @student.show_causes.each do |sc|
+                    %tr
+                      %td{ style: 'width: 30%; padding: 10px;' }
+                        = sc.date
+                      %td{ style: 'width: 70%; padding: 10px;' }
+                        = sc.reason
+          - else
+            %p{ style: 'text-align: center; color:red; font-size: 20px' }
+              No Show Causes found
+
+
+          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
+            Results
+
+          - if @student.results.present?
+            %div{ style: 'text-align: center;' }
+              %table.table.table-striped.table-hover
+                %thead
+                  %tr
+                    %th{ style: 'padding: 10px;' }
+                      Full Mark
+                    %th{ style: 'padding: 10px;' }
+                      Achieved Mark
+                    %th{ style: 'padding: 10px;' }
+                      Referred Subjects
+                    %th{ style: 'padding: 10px;' }
+                      remark
+                %tbody
+                  - @student.results.each do |result|
+                    %tr
+                      %td{ style: 'padding: 10px;' }
+                        = result.full_mark
+                      %td{ style: 'padding: 10px;' }
+                        = result.achieved_mark
+                      %td{ style: 'padding: 10px;' }
+                        = result.referred_subjects
+                      %td{ style: 'padding: 10px;' }
+                        = result.remark
+          - else
+            %p{ style: 'text-align: center; color:red; font-size: 20px' }
+              No Results found

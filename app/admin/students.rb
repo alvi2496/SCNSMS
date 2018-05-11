@@ -39,6 +39,11 @@ ActiveAdmin.register Student do
     render partial: 'show', locals: { student: student }
   end
 
+  action_item :PDF, only: :show do
+    link_to 'Convert to PDF', pdf_path(student), target: '_blank'
+  end
+
+
   form do |f|
     f.inputs do
       f.input :bnc_student_id, label: 'BNC Student ID'
