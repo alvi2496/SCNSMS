@@ -12,15 +12,31 @@
                   %td{ style: 'text-align: right; width: 30%;' }
                     = image_tag student.avatar.url, style: 'height: 200px; width: 170px;'
 
-          %h1{ style: 'font-size: 30px; text-align: center; padding-top: 40px;' }
-            Student Registration Information
-
-          %h2{ style: 'font-size: 35px; text-align: center; padding-top: 40px;'}
-            = "Student ID# #{student.id}"
+          - if pdf
+            %h1{ style: 'font-size: 30px; text-align: center;' }
+              Student Registration Information
+          - else
+            %h1{ style: 'font-size: 30px; text-align: center; padding-top: 40px;' }
+              Student Registration Information
+          - if pdf
+            %h2{ style: 'font-size: 35px; text-align: center; padding-top: 10px;'}
+              = "Student ID# #{student.roll}"
+          -else
+            %h2{ style: 'font-size: 35px; text-align: center; padding-top: 40px;'}
+              = "Student ID# #{student.roll}"
 
           %div{ style: 'text-align: center;' }
             %table.table.table-striped.table-hover
               %tbody
+                %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Roll
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.roll
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Session
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.session
                 %tr
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     BNC Student ID
@@ -41,22 +57,13 @@
                     = student.institution_name
                 %tr
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
-                    Session
-                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
-                    = student.session
-                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Date of Program/ Course Admission
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.date_of_program_admission
-                %tr
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Length of Program/Course
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.length_of_program
-                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
-                    Student Program Completion Length
-                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
-                    = student.program_completion_length
                 %tr
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Program/ Course Starting Date
@@ -66,14 +73,22 @@
                     Program/ Course Completion Date
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.program_completion_date
+
                 %tr
+                  %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
+                    Student Program Completion Length
+                  %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
+                    = student.program_completion_length
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Payment method
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
-                    = student.payment_method
-
-          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
-            Personal Information
+                    = student.payment_method.present? ? student.payment_method.humanize : 'N/A'
+          - if pdf
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 15px;'}
+              Personal Information
+          -else
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 40px;'}
+              Personal Information
 
           %div{ style: 'text-align: center;' }
             %table.table.table-striped.table-hover
@@ -104,12 +119,12 @@
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Religion
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
-                    = student.religion
+                    = student.religion.present? ? student.religion.humanize : 'N/A'
                 %tr
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Sex
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
-                    = student.sex
+                    = student.sex.present? ? student.sex.humanize : ''
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Blood Group
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
@@ -136,7 +151,7 @@
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Quota ( Poor and Merit/ Poor/ Merit)
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
-                    = student.quota
+                    = student.quota.present? ? student.quota.humanize : 'N/A'
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Nationality
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
@@ -145,7 +160,7 @@
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     Marital Status
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
-                    = student.marital_status
+                    = student.marital_status.present? ? student.marital_status.humanize : 'N/A'
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
                     E-mail Address
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
@@ -155,9 +170,12 @@
                     Mobile Number
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.mobile_number
-
-          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
-            Present Address
+          - if pdf
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 15px;'}
+              Present Address
+          -else
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 40px;'}
+              Present Address
 
           - if student.addresses.present.present?
             - student.addresses.present.each do |present|
@@ -195,10 +213,12 @@
             %p{ style: 'text-align: center; color:red; font-size: 20px' }
               No Present Address found
 
-
-
-          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
-            Permanent Address
+          - if pdf
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 15px;'}
+              Permanent Address
+          -else
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 40px;'}
+              Permanent Address
 
           - if student.addresses.permanent.present?
             - student.addresses.permanent.each do |permanent|
@@ -236,12 +256,12 @@
             %p{ style: 'text-align: center; color:red; font-size: 20px' }
               No Permanent Address found
 
-
-
-
-
-          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
-            Educational Qualification
+          - if pdf
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 15px;'}
+              Educational Qualification
+          -else
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 40px;'}
+              Educational Qualification
 
           - if student.educational_qualifications.present?
             %div{ style: 'text-align: center;' }
@@ -283,9 +303,12 @@
             %p{ style: 'text-align: center; color:red; font-size: 20px' }
               No Educational Qualifications found
 
-
-          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
-            Leaves
+          - if pdf
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 15px;'}
+              Leaves
+          -else
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 40px;'}
+              Leaves
 
           - if student.leaves.present?
             %div{ style: 'text-align: center;' }
@@ -315,9 +338,12 @@
             %p{ style: 'text-align: center; color:red; font-size: 20px' }
               No Leaves found
 
-
-          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
-            Show Causes
+          - if pdf
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 15px;'}
+              Show Causes
+          -else
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 40px;'}
+              Show Causes
 
           - if student.show_causes.present?
             %div{ style: 'text-align: center;' }
@@ -339,9 +365,12 @@
             %p{ style: 'text-align: center; color:red; font-size: 20px' }
               No Show Causes found
 
-
-          %h1{ style: 'font-size: 25px; text-align: center; padding-top: 40px;' }
-            Results
+          - if pdf
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 15px;'}
+              Results
+          -else
+            %h2{ style: 'font-size: 25px; text-align: center; padding-top: 40px;'}
+              Results
 
           - if student.results.present?
             %div{ style: 'text-align: center;' }
@@ -349,16 +378,20 @@
                 %thead
                   %tr
                     %th{ style: 'padding: 10px;' }
+                      Year
+                    %th{ style: 'padding: 10px;' }
                       Full Mark
                     %th{ style: 'padding: 10px;' }
                       Achieved Mark
                     %th{ style: 'padding: 10px;' }
                       Referred Subjects
                     %th{ style: 'padding: 10px;' }
-                      remark
+                      Remarks
                 %tbody
                   - student.results.each do |result|
                     %tr
+                      %td{ style: 'padding: 10px;' }
+                        = result.year.present? ? result.year.humanize : 'N/A'
                       %td{ style: 'padding: 10px;' }
                         = result.full_mark
                       %td{ style: 'padding: 10px;' }

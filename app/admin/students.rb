@@ -2,7 +2,7 @@ ActiveAdmin.register Student do
 
   menu priority: 1
 
-  permit_params :bnc_student_id, :du_student_id, :program, :institution_name, :session, :length_of_program,
+  permit_params :roll, :bnc_student_id, :du_student_id, :program, :institution_name, :session, :length_of_program,
                 :program_completion_length, :date_of_program_admission, :program_start_date, :quota,
                 :program_completion_date, :payment_method, :name, :full_name, :sex, :father_name, :mother_name,
                 :date_of_birth, :national_id_number, :passport_number, :guardian_name, :relation_with_guardian,
@@ -13,7 +13,7 @@ ActiveAdmin.register Student do
                                                         :year, :duration, :country_name, :_destroy],
                 leaves_attributes: [:id,:start_date, :end_date, :reason, :duration, :_destroy],
                 show_causes_attributes: [:id, :date, :reason, :_destroy],
-                results_attributes: [:id, :full_mark, :achieved_mark, :referred_subjects, :remark, :_destroy]
+                results_attributes: [:id, :year, :full_mark, :achieved_mark, :referred_subjects, :remark, :_destroy]
 
   index do
     selectable_column
@@ -36,7 +36,7 @@ ActiveAdmin.register Student do
 
 
   show do
-    render partial: 'show', locals: { student: student }
+    render partial: 'show', locals: { student: student, pdf: false }
   end
 
   action_item :PDF, only: :show do
@@ -46,6 +46,7 @@ ActiveAdmin.register Student do
 
   form do |f|
     f.inputs do
+      f.input :roll
       f.input :bnc_student_id, label: 'BNC Student ID'
       f.input :du_student_id, label: 'DU Student ID'
       f.input :program, label: 'Program/ Course Type'
@@ -114,6 +115,7 @@ ActiveAdmin.register Student do
     end
     f.has_many :results do |result|
       result.inputs do
+        result.input :year
         result.input :full_mark
         result.input :achieved_mark
         result.input :referred_subjects
