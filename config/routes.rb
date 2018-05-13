@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :pdf, only: :show
+  resources :applies
 end
