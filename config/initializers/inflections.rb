@@ -16,4 +16,5 @@
 # end
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'leave', 'leaves'
+  inflect.plural 'quota', 'quotas'
 end
