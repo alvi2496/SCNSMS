@@ -14,5 +14,7 @@
  *= require_self
  */
 @import 'student_show';
+@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "applies";
+@import 'bootstrap-datetimepicker';

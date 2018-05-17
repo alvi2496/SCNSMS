@@ -15,7 +15,9 @@ gem 'puma', '= 3.10.0'
 # include font-awesome
 gem 'font-awesome-rails'
 # include bootstrap
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 # include jquery
 gem 'jquery-rails'
 # Use SCSS for stylesheets

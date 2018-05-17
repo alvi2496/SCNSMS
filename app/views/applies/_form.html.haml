@@ -1,6 +1,6 @@
 .row.justify-content-center
-  .col-md-10
-    %table.table.table-borderless
+  .col-md-10.col-md-offset-1
+    %table.table.borderless
       = form_for student do |f|
         %tr
           .form-group
@@ -24,7 +24,7 @@
           .form-group
             %td
               = f.label 'Date of Birth'
-              = f.date_select :date_of_birth, class: 'form-control'
+              = f.text_field :date_of_birth, class: 'form-control', id: 'datetimepicker4'
           .form-group
             %td
               = f.label 'Religion'
@@ -62,8 +62,8 @@
         %tr
           .form-group
             %td
-              = f.label 'Quota ( Poor and Merit/ Poor/ Merit)'
-              = f.select :quota, options_for_select(Student.quotas.map {|k,v| [k.humanize,v]}), {},
+              = f.label 'Marital Status'
+              = f.select :marital_status, options_for_select(Student.marital_statuses.map {|k,v| [k.humanize,v]}), {},
               class: 'form-control'
           .form-group
             %td
@@ -72,19 +72,16 @@
         %tr
           .form-group
             %td
-              = f.label 'Marital Status'
-              = f.select :marital_status, options_for_select(Student.marital_statuses.map {|k,v| [k.humanize,v]}), {},
-              class: 'form-control'
+              = f.label 'Mobile Number'
+              = f.text_field :mobile_number, class: 'form-control'
           .form-group
             %td
               = f.label 'E-mail Address'
               = f.text_field :email_address, class: 'form-control'
-        %tr
-          .form-group
-            %td
-              = f.label 'Mobile Number'
-              = f.text_field :mobile_number, class: 'form-control'
-          -#.form-group
-          -#  %td
-          -#    = f.label 'Mother\'s Name (English)'
-          -#    = f.text_field :mother_name, class: 'form-control'
+
+:javascript
+  $(function () {
+      $('#datetimepicker4').datetimepicker({
+        format: 'DD/MM/YYYY'
+      });
+  });
