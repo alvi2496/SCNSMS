@@ -4,5 +4,8 @@ Rails.application.routes.draw do
 
   resources :students
   resources :pdf, only: :show
-  resources :applies
+
+  unless Rails.env.production?
+    resources :applies
+  end
 end
