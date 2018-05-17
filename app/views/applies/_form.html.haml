@@ -4,80 +4,86 @@
       = form_for student do |f|
         %tr
           .form-group
-            %td.fifty
-              = f.label 'Name(Bangla)'
-              = f.text_field :name, class: 'form-control'
-          .form-group
-            %td
+            %td.thirty-three
               = f.label 'Full Name(English)'
               = f.text_field :full_name, class: 'form-control'
-        %tr
+          %td.one
           .form-group
-            %td
+            %td.thirty-three
               = f.label 'Father\'s Name (English)'
               = f.text_field :father_name, class: 'form-control'
+          %td.one
           .form-group
             %td
               = f.label 'Mother\'s Name (English)'
               = f.text_field :mother_name, class: 'form-control'
         %tr
           .form-group
-            %td
+            %td.thirty-three
               = f.label 'Date of Birth'
               = f.text_field :date_of_birth, class: 'form-control', id: 'datetimepicker4'
+          %td.one
           .form-group
-            %td
+            %td.thirty-three
+              = f.label 'Sex'
+              = f.select :sex, options_for_select(Student.sexes.map {|k,v| [k.humanize,v]}), {},
+              class: 'form-control'
+          %td.one
+          .form-group
+            %td.thirty-three
               = f.label 'Religion'
               = f.select :religion, options_for_select(Student.religions.map {|k,v| [k.humanize,v]}), {},
               class: 'form-control'
         %tr
           .form-group
-            %td
-              = f.label 'Sex'
-              = f.select :sex, options_for_select(Student.sexes.map {|k,v| [k.humanize,v]}), {},
-              class: 'form-control'
-          .form-group
-            %td
+            %td.thirty-three
               = f.label 'Blood Group'
               = f.select :blood_group, options_for_select(Student.blood_groups.map {|k,v| [k.humanize,v]}), {},
               class: 'form-control'
-        %tr
+          %td.one
           .form-group
-            %td
+            %td.thirty-three
               = f.label 'National ID No'
               = f.text_field :national_id_number, class: 'form-control'
+          %td.one
           .form-group
-            %td
+            %td.thirty-three
               = f.label 'Passport No'
               = f.text_field :passport_number, class: 'form-control'
         %tr
           .form-group
-            %td
+            %td.thirty-three
               = f.label 'Guardian Name'
               = f.text_field :guardian_name, class: 'form-control'
+          %td.one
           .form-group
-            %td
+            %td.thirty-three
               = f.label 'Relation to Guardian'
               = f.text_field :relation_with_guardian, class: 'form-control'
-        %tr
+          %td.one
           .form-group
-            %td
+            %td.thirty-three
               = f.label 'Marital Status'
               = f.select :marital_status, options_for_select(Student.marital_statuses.map {|k,v| [k.humanize,v]}), {},
               class: 'form-control'
-          .form-group
-            %td
-              = f.label 'Nationality'
-              = f.text_field :nationality, class: 'form-control'
         %tr
           .form-group
-            %td
+            %td.thirty-three
+              = f.label 'Nationality'
+              = f.text_field :nationality, class: 'form-control'
+          %td.one
+          .form-group
+            %td.thirty-three
               = f.label 'Mobile Number'
               = f.text_field :mobile_number, class: 'form-control'
+          %td.one
           .form-group
-            %td
+            %td.thirty-three
               = f.label 'E-mail Address'
               = f.text_field :email_address, class: 'form-control'
+        %tr
+          %td
+            = f.submit f.object.new_record? ? 'Save & Continue' : 'Update & Continue', class: 'btn btn-primary'
 
 :javascript
   $(function () {
