@@ -15,7 +15,7 @@ gem 'puma', '~> 3.7'
 # include font-awesome
 gem 'font-awesome-rails'
 # include bootstrap
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.1.1'
 # include jquery
 gem 'jquery-rails'
 # Use SCSS for stylesheets
@@ -37,7 +37,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'haml'
 gem 'haml-rails'
+gem 'html2haml'
 gem 'activeadmin'
+gem 'formadmin'
 gem 'devise'
 gem 'cancan'
 gem 'draper'

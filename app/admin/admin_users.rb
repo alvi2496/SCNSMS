@@ -1,4 +1,7 @@
 ActiveAdmin.register AdminUser do
+
+  menu false
+
   permit_params :email, :password, :password_confirmation
 
   index do
@@ -9,6 +12,15 @@ ActiveAdmin.register AdminUser do
     column :sign_in_count
     column :created_at
     actions
+  end
+
+  show do
+    attributes_table do
+      row :email
+      row :current_sign_in_at
+      row :sign_in_count
+      row :created_at
+    end
   end
 
   filter :email

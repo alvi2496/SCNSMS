@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180508162419) do
+ActiveRecord::Schema.define(version: 20180511191817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,20 @@ ActiveRecord::Schema.define(version: 20180508162419) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "addresses", force: :cascade do |t|
+    t.bigint "student_id"
+    t.string "village_house_road"
+    t.string "post_office"
+    t.string "postal_code"
+    t.string "union"
+    t.string "district"
+    t.string "division"
+    t.integer "address_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_addresses_on_student_id"
+  end
+
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -44,6 +58,90 @@ ActiveRecord::Schema.define(version: 20180508162419) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "educational_qualifications", force: :cascade do |t|
+    t.bigint "student_id"
+    t.string "level_of_education"
+    t.string "institution"
+    t.string "roll"
+    t.string "result"
+    t.string "year"
+    t.string "duration"
+    t.string "country_name", default: "Bangladesh"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_educational_qualifications_on_student_id"
+  end
+
+  create_table "leaves", force: :cascade do |t|
+    t.bigint "student_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "reason"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_leaves_on_student_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.bigint "student_id"
+    t.string "full_mark"
+    t.string "achieved_mark"
+    t.string "referred_subjects"
+    t.string "remark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "year"
+    t.index ["student_id"], name: "index_results_on_student_id"
+  end
+
+  create_table "show_causes", force: :cascade do |t|
+    t.bigint "student_id"
+    t.date "date"
+    t.text "reason"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_show_causes_on_student_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "bnc_student_id"
+    t.string "du_student_id"
+    t.string "program"
+    t.string "institution_name"
+    t.string "session"
+    t.string "length_of_program"
+    t.string "program_completion_length"
+    t.date "date_of_program_admission"
+    t.date "program_start_date"
+    t.date "program_completion_date"
+    t.integer "payment_method"
+    t.string "name"
+    t.string "full_name"
+    t.integer "sex"
+    t.string "father_name"
+    t.string "mother_name"
+    t.date "date_of_birth"
+    t.integer "blood_group"
+    t.string "national_id_number"
+    t.string "passport_number"
+    t.string "guardian_name"
+    t.string "relation_with_guardian"
+    t.integer "quota"
+    t.string "nationality"
+    t.integer "religion"
+    t.integer "marital_status"
+    t.string "email_address"
+    t.string "mobile_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string "roll"
   end
 
 end
