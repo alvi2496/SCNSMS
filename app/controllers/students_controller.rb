@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      flash[:notice] = 'Student saved successfully'
+      session[:student_id] = @student.id
       redirect_to new_address_path
     else
       flash[:alert] = 'Student was not saved successfully'

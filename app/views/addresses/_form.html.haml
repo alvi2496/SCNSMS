@@ -1,0 +1,44 @@
+.row
+  .col-md-10.col-md-offset-1
+    = form_tag addresses_path(method: :post) do
+      - empty_addresses.each do |address|
+        .row
+          .col-md-12
+            %table.table.borderless
+              %tr
+                %th
+                  = address.address_type.humanize
+              = fields_for 'addresses[]', address, include_id: false do |f|
+                = f.hidden_field :address_type, value: address.address_type
+                %tr
+                  %td.thirty-three
+                    .form-group
+                      = f.label 'Village/ House/ Road'
+                      = f.text_field :village_house_road, class: 'form-control'
+                  %td.one
+                  %td.thirty-three
+                    .form-group
+                      = f.label :post_office
+                      = f.text_field :post_office, class: 'form-control'
+                  %td.one
+                  %td.thirty-three
+                    .form-group
+                      = f.label :postal_code
+                      = f.text_field :postal_code, class: 'form-control'
+                %tr
+                  %td.thirty-three
+                    .form-group
+                      = f.label :union
+                      = f.text_field :union, class: 'form-control'
+                  %td.one
+                  %td.thirty-three
+                    .form-group
+                      = f.label :district
+                      = f.text_field :district, class: 'form-control'
+                  %td.one
+                  %td.thirty-three
+                    .form-group
+                      = f.label :division
+                      = f.text_field :division, class: 'form-control'
+
+      = submit_tag 'Save & Continue >>', class: 'btn btn-primary pull-right'
