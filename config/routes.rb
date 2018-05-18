@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :students
+  resources :addresses
   resources :pdf, only: :show
 
   unless Rails.env.production?
