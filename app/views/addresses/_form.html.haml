@@ -4,10 +4,14 @@
       - empty_addresses.each do |address|
         .row
           .col-md-12
-            %table.table.borderless
-              %tr
-                %th
-                  = address.address_type.humanize
+            %h4.text-center
+              = "#{address.address_type.humanize} Address"
+            - if address.address_type == 'permanent'
+              .checkbox.text-center
+                = label_tag 'same_address' do
+                  = check_box_tag 'same_address'
+                  Same as Present Address
+            %table.table.borderless{ id: "#{address.address_type}-address-fields" }
               = fields_for 'addresses[]', address, include_id: false do |f|
                 = f.hidden_field :address_type, value: address.address_type
                 %tr
