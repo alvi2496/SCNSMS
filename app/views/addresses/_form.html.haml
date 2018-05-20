@@ -45,4 +45,5 @@
                       = f.label :division
                       = f.text_field :division, class: 'form-control'
 
+      = link_to '<< Update Personal Info', edit_student_path(@student), class: 'btn btn-primary pull-left'
       = submit_tag 'Save & Continue >>', class: 'btn btn-primary pull-right'

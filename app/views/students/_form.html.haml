@@ -16,7 +16,9 @@
           .form-group
             %td.thirty-three
               = f.label 'Date of Birth'
-              = f.text_field :date_of_birth, class: 'form-control', id: 'datetimepicker4'
+              = f.text_field :date_of_birth, class: 'form-control', id: 'datetimepicker4',
+                value: student.date_of_birth.present? ? student.date_of_birth.strftime('%d/%m/%Y') : ''
+
         %tr
           .form-group
             %td.thirty-three
