@@ -1,8 +1,8 @@
 set :stage, :staging
 set :branch, :development
 
-set :server_port, 80
-set :server_port_ssl, 443
+set :server_port, 3000
+set :server_port_ssl, 3443
 
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
