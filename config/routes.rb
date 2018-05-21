@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :students
   resources :addresses
+  resources :educational_qualifications
   resources :pdf, only: :show
 
   unless Rails.env.production?
