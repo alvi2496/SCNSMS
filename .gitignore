@@ -39,3 +39,6 @@
 
 # Ignore the folder of requirement documents
 /docs
+
+# Ignore secrets
+/config/secrets.yml
