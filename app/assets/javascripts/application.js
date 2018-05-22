@@ -18,4 +18,5 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require address
+//= require educational_qualifications
 //= require_tree .

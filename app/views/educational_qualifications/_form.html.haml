@@ -1,2 +1,12 @@
-= form_tag educational_qualifications_path(method: :post) do
-  = render partial: 'fields', locals: { educational_qualification: @educational_qualifications }
+%table.table
+  = form_tag educational_qualifications_path(method: :post) do
+    - @educational_qualifications.each_with_index do |educational_qualification, k|
+      - if k == 0
+        = render partial: 'fields',
+        locals: { educational_qualification: educational_qualification, table_visibility: '', table_id: "form_table_#{k}" }
+      - else
+        = render partial: 'fields',
+        locals: { educational_qualification: educational_qualification, table_visibility: 'display:none;', table_id: "form_table_#{k}"}
+
+    = submit_tag 'Save & Continue >>', name: 'commit', class: 'btn btn-primary pull-right', type: 'submit'
+  = button_tag 'Add Another', class: 'btn btn-primary pull-left', id: 'add-row'

@@ -1,5 +1,5 @@
 = fields_for 'educational_qualifications[]', educational_qualification, include_id: false do |f|
-  %table.table
+  %table.table{ id: "#{table_id}", style: "#{table_visibility}"}
     %tr
       %td.thirty-three
         .form-group
@@ -15,18 +15,21 @@
         .form-group
           = f.label :roll
           = f.text_field :roll, class: 'form-control'
-    %tr
-      %td.thirty-three
-        .form-group
-          = f.label :result
-          = f.text_field :result, class: 'form-control'
-      %td.one
-      %td.thirty-three
-        .form-group
-          = f.label :year
-          = f.text_field :year, class: 'form-control'
-      %td.one
-      %td.thirty-three
-        .form-group
-          = f.label :duration
-          = f.text_field :duration, class: 'form-control'
+      %tr
+        %td.thirty-three
+          .form-group
+            = f.label :result
+            = f.text_field :result, class: 'form-control'
+        %td.one
+        %td.thirty-three
+          .form-group
+            = f.label :year
+            = f.text_field :year, class: 'form-control'
+        %td.one
+        %td.thirty-three
+          .form-group
+            = f.label :duration
+            = f.text_field :duration, class: 'form-control'
+      -#%tr
+      -#  %td
+      -#    = button_tag 'Remove', class: 'btn btn-danger pull-left', id: 'remove-form'
