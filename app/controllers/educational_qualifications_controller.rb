@@ -9,6 +9,10 @@ class EducationalQualificationsController < ApplicationController
   end
 
   def create
-    n = 1
+    if EducationalQualification.store(params[:educational_qualifications], session[:student_id])
+      redirect_to student_path(Student.find(session[:student_id]))
+    else
+      render :new
+    end
   end
 end
