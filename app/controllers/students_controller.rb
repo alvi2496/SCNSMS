@@ -1,8 +1,8 @@
 class StudentsController < ApplicationController
 
-  def show
-    @student = Student.find(params[:id])
-  end
+  before_action :student, only: [:show, :edit, :update]
+
+  def show; end
 
   def new
     @student = Student.new
@@ -18,12 +18,9 @@ class StudentsController < ApplicationController
     end
   end
 
-  def edit
-    @student = Student.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @student = Student.find(params[:id])
     if @student.update_attributes(student_params)
       redirect_to new_address_path
     else
@@ -38,5 +35,9 @@ class StudentsController < ApplicationController
                                     :religion, :sex, :blood_group, :marital_status, :national_id_number,
                                     :passport_number, :nationality, :guardian_name, :relation_with_guardian,
                                     :mobile_number, :email_address, :avatar)
+  end
+
+  def student
+    Student.find(params[:id])
   end
 end
