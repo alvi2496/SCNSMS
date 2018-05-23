@@ -18,32 +18,32 @@
                   %td.thirty-three
                     .form-group
                       = f.label 'Village/ House/ Road'
-                      = f.text_field :village_house_road, class: 'form-control'
+                      = f.text_field :village_house_road, class: 'form-control', required: true
                   %td.one
                   %td.thirty-three
                     .form-group
                       = f.label :post_office
-                      = f.text_field :post_office, class: 'form-control'
+                      = f.text_field :post_office, class: 'form-control', required: true
                   %td.one
                   %td.thirty-three
                     .form-group
                       = f.label :postal_code
-                      = f.text_field :postal_code, class: 'form-control'
+                      = f.text_field :postal_code, class: 'form-control', required: true
                 %tr
                   %td.thirty-three
                     .form-group
                       = f.label :union
-                      = f.text_field :union, class: 'form-control'
+                      = f.text_field :union, class: 'form-control', required: true
                   %td.one
                   %td.thirty-three
                     .form-group
                       = f.label :district
-                      = f.text_field :district, class: 'form-control'
+                      = f.text_field :district, class: 'form-control', required: true
                   %td.one
                   %td.thirty-three
                     .form-group
                       = f.label :division
-                      = f.text_field :division, class: 'form-control'
+                      = f.text_field :division, class: 'form-control', required: true
 
       = link_to '<< Update Personal Info', edit_student_path(@student), class: 'btn btn-primary pull-left'
       = submit_tag 'Save & Continue >>', class: 'btn btn-primary pull-right'
