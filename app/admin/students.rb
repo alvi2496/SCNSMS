@@ -69,7 +69,7 @@ ActiveAdmin.register Student do
       f.input :passport_number, label: 'Passport No'
       f.input :guardian_name
       f.input :relation_with_guardian
-      f.input :quota, label: 'Quota(Grand Daughter/ Son or Great GrandDaughter/ Son of Freedom Fighter)'
+      f.input :quota, label: 'Quota'
       f.input :nationality, value: 'Bangladesh'
       f.input :religion
       f.input :marital_status
