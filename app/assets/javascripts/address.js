@@ -1,11 +1,15 @@
 $(document).on('turbolinks:load', function() {
+    if ($("#address_type_0").val() == 'both'){
+        $("#same_address").attr('checked', true);
+        $("#permanent-address-fields :input").attr("disabled", true);
+    }
     $("#same_address").change(function(){
         if(this.checked){
             $("#permanent-address-fields :input").attr("disabled", true);
-            $("#addresses__address_type").val('both');
+            $("#address_type_0").val('both');
         }
         else{
-            $("#addresses__address_type").val('present');
+            $("#address_type_0").val('present');
             $("#permanent-address-fields :input").attr("disabled", false);
         }
     });

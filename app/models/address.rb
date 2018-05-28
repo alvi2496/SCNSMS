@@ -21,4 +21,8 @@ class Address < ApplicationRecord
       addr.save
     end
   end
+
+  def self.update_addresses(addresses, student_id)
+    n = 1
+  end
 end
