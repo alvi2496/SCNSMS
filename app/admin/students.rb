@@ -50,7 +50,7 @@ ActiveAdmin.register Student do
       f.input :bnc_student_id, label: 'BNC Student ID'
       f.input :du_student_id, label: 'DU Student ID'
       f.input :program, label: 'Program/ Course Type'
-      f.input :institution_name
+      f.input :institution_name, label: 'College Name'
       f.input :session
       f.input :length_of_program, label: 'Length of Program/Course'
       f.input :program_completion_length, label: 'Student Program Completion Length'

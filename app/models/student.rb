@@ -12,7 +12,7 @@ class Student < ApplicationRecord
 
   enum payment_method: %i[cash loan]
   enum sex: %i[male female]
-  enum quota: %i[poor_and_merit poor merit freedom_fighter none]
+  enum quota: %i[poor_and_merit poor merit freedom_fighter not_applicable]
   enum religion: %i[islam hindu christian buddhist other]
   enum marital_status: %i[single married]
   enum blood_group: %i[O−	O+	A−	A+	B−	B+	AB−	AB+]

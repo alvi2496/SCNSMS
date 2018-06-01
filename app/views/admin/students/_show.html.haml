@@ -52,7 +52,7 @@
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.program
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
-                    Institution name
+                    College Name
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.institution_name
                 %tr
@@ -149,7 +149,7 @@
                     = student.relation_with_guardian
                 %tr
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
-                    Quota ( Poor and Merit/ Poor/ Merit)
+                    Quota
                   %td{ style: 'width: 20%; text-align: left; padding: 10px;' }
                     = student.quota.present? ? student.quota.humanize : 'N/A'
                   %th{ style: 'width: 30%; text-align: left; padding: 10px;' }
