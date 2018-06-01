@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180511191817) do
+ActiveRecord::Schema.define(version: 20180601103635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20180511191817) do
     t.string "country_name", default: "Bangladesh"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "board"
+    t.integer "group"
     t.index ["student_id"], name: "index_educational_qualifications_on_student_id"
   end
 

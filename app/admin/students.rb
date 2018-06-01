@@ -10,7 +10,7 @@ ActiveAdmin.register Student do
                 addresses_attributes: [:id, :village_house_road, :post_office, :postal_code, :union, :district,
                                        :division, :address_type, :_destroy],
                 educational_qualifications_attributes: [:id, :level_of_education, :institution, :roll, :result,
-                                                        :year, :duration, :country_name, :_destroy],
+                                                        :year, :duration, :board, :group, :country_name, :_destroy],
                 leaves_attributes: [:id,:start_date, :end_date, :reason, :duration, :_destroy],
                 show_causes_attributes: [:id, :date, :reason, :_destroy],
                 results_attributes: [:id, :year, :full_mark, :achieved_mark, :referred_subjects, :remark, :_destroy]
@@ -95,7 +95,8 @@ ActiveAdmin.register Student do
         educational_qualification.input :roll
         educational_qualification.input :result, label: 'Class/ CGPA'
         educational_qualification.input :year
-        educational_qualification.input :duration
+        educational_qualification.input :board
+        educational_qualification.input :group
         educational_qualification.input :country_name, label: 'Country', value: 'Bangladesh'
       end
     end
